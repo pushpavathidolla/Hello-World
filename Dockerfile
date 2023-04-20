@@ -1,9 +1,4 @@
-FROM openjdk:8-jdk-alpine
-MAINTAINER Hello-Wolrd
-RUN mkdir -p /tmp/helloworld/builds
-ENV PROJECT_HOME /tmp/helloworld/builds
-COPY target/*.war $PROJECT_HOME/hello-world.war
-WORKDIR $PROJECT_HOME
-
-EXPOSE 8888
-ENTRYPOINT ["java", "-war", "/tmp/helloworld/builds/hello-world.war"]
+FROM openjdk:11
+MAINTAINER baeldung.com
+COPY target/docker-java-jar-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
