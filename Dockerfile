@@ -1,4 +1,4 @@
 FROM openjdk:11
 MAINTAINER baeldung.com
-COPY target/hello-world-war-1.0.0.war
+COPY target/*.jar $PROJECT_HOME/app.war
 ENTRYPOINT ["java","-war","/app.war"]
