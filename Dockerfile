@@ -1,4 +1,4 @@
 FROM openjdk:11
 MAINTAINER baeldung.com
-COPY target/docker-java-jar-0.0.1-SNAPSHOT.jar app.jar
+COPY target/hello-world-war-1.0.0.war
 ENTRYPOINT ["java","-jar","/app.jar"]
