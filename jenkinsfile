@@ -1,23 +1,21 @@
 pipeline {
-    agent any
-    tools {
-        maven "maven"
-    }
+  agent any
+  tools {
+    maven "maven"
+  }
     
-	stages{
-	stage('SonarQube Analysis') 
-        {
-	steps {
+  stages{
+	stage('SonarQube Analysis') {
+      steps {
         withSonarQubeEnv('SonarQube') {
         sh "mvn clean package sonar:sonar -Dsonar.sources=."
        }
       }
-    
     }
     stage('Build') { 
      steps{    
       sh "mvn clean package"
       }
-    }
+     }
     }
 }
