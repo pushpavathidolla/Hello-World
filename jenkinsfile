@@ -12,7 +12,8 @@ pipeline {
        }
       }
     }
-    stage('Build') { 
+    stage('Checkout') 
+    { 
      steps {    
       sh "mvn clean package"
       }
