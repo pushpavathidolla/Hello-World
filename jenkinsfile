@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        maven "maven 3.6.3"
+        maven "maven"
     }
     
 	stages{
@@ -12,10 +12,11 @@ pipeline {
         sh "mvn clean package sonar:sonar -Dsonar.sources=."
        }
       }
-    }
+    
     
     stage('Build') { 
      steps{    
       sh "mvn clean package"
       }
     }
+    }
