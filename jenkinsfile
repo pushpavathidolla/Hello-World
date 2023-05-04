@@ -4,8 +4,8 @@ pipeline {
     maven "maven"
   }
     
-  stages{
-	stage('SonarQube Analysis') {
+  stages {
+    stage('SonarQube Analysis') {
       steps {
         withSonarQubeEnv('SonarQube') {
         sh "mvn clean package sonar:sonar -Dsonar.sources=."
