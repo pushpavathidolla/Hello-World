@@ -7,7 +7,6 @@
 	<packaging>war</packaging>
 	<name>Hello World Web Application Repository</name>
 	<description>Simplest possible Java Webapp</description>
-
 	<build>
 		<plugins>
 			<plugin>
